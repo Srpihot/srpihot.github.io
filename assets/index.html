@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>抖音无水印——by_Srpihot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+	.x{
+		margin-top:10%;
+	}
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid x">
+    	<div class="alert alert-dark" role="alert">
+    		请在下面的输入框中输入抖音短视频链接 如http://v.douyin.com/xxxxx
+</div>
+        <input type="text" class="form-control col-sm" name="dyurl" id="dyurl" placeholder="输入URL" />
+        <br><br>
+        <button onclick="btn()" class="btn btn-success">获取</button>
+        <p id="a"></p>
+        <p id="b"></p>
+
+        <div><a id="main" href="#" target="_blank" style="display: none;">点击跳转</a></div>
+    </div>
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function btn() {
+                const v = document.getElementById('dyurl')
+                if(v.value!=''){
+                var dyurl = 'http://douy.intao.xyz/douyin.php?url=' + v.value
+                $.ajax({
+                    url: dyurl,
+                    success: function(e) {
+                        ne = JSON.parse(e)
+                        if(ne.name != undefined){a.innerText = ne.name} else{
+                            // a.innerText = '请输入正确的网址'
+                            alert("请输入正确的网址")
+                            m.style = 'display:none;'
+                        }
+                        const b = document.getElementById('b')
+                        if(ne.url != undefined){b.innerText = ne.url}else{b.innerText = ''}
+
+                        const m = document.getElementById('main')
+                        m.href = ne.url
+                        m.style = 'display:yes'
+                        	
+                        
+                     }
+                 })
+                }else{
+                    alert("请输入网址！")
+                }
+            }
+        </script>   
+</body>
+</html>
