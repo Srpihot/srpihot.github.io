@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://srpihot.github.io/sitemap.xml
