@@ -2,14 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://srpihot.github.io/archives/</loc>
-  </url><url>
     <loc>https://srpihot.github.io/categories/</loc>
+    <lastmod>2022-01-09T21:26:47+08:00</lastmod>
   </url><url>
-    <loc>https://srpihot.github.io/search/</loc>
+    <loc>https://srpihot.github.io/post/new-start/</loc>
+    <lastmod>2022-01-09T21:26:47+08:00</lastmod>
+  </url><url>
+    <loc>https://srpihot.github.io/post/</loc>
+    <lastmod>2022-01-09T21:26:47+08:00</lastmod>
   </url><url>
     <loc>https://srpihot.github.io/tags/</loc>
+    <lastmod>2022-01-09T21:26:47+08:00</lastmod>
+  </url><url>
+    <loc>https://srpihot.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2022-01-09T21:26:47+08:00</lastmod>
+  </url><url>
+    <loc>https://srpihot.github.io/categories/%E6%84%9F%E6%82%9F/</loc>
+    <lastmod>2022-01-09T21:26:47+08:00</lastmod>
+  </url><url>
+    <loc>https://srpihot.github.io/tags/%E6%8A%98%E8%85%BE%E6%97%A5%E5%BF%97/</loc>
+    <lastmod>2022-01-09T21:26:47+08:00</lastmod>
   </url><url>
     <loc>https://srpihot.github.io/</loc>
+    <lastmod>2022-01-09T21:26:47+08:00</lastmod>
+  </url><url>
+    <loc>https://srpihot.github.io/archives/</loc>
+  </url><url>
+    <loc>https://srpihot.github.io/search/</loc>
   </url>
 </urlset>

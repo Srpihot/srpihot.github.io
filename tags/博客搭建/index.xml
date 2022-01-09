@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>🇨🇳Srpihot&#39;s Blog</title>
-    <link>https://srpihot.github.io/</link>
-    <description>Recent content on 🇨🇳Srpihot&#39;s Blog</description>
+    <title>博客搭建 on 🇨🇳Srpihot&#39;s Blog</title>
+    <link>https://srpihot.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+    <description>Recent content in 博客搭建 on 🇨🇳Srpihot&#39;s Blog</description>
     <image>
       <url>https://srpihot.github.io/image1</url>
       <link>https://srpihot.github.io/image1</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 09 Jan 2022 21:26:47 +0800</lastBuildDate><atom:link href="https://srpihot.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jan 2022 21:26:47 +0800</lastBuildDate><atom:link href="https://srpihot.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New Start-从博客搭建开始</title>
       <link>https://srpihot.github.io/post/new-start/</link>
@@ -18,8 +18,6 @@
       <guid>https://srpihot.github.io/post/new-start/</guid>
       <description>忙活了几年，最后还是选择了安稳。</description>
     </item>
-    
-    
     
   </channel>
 </rss>
