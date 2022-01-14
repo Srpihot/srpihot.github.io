@@ -9,7 +9,34 @@
       <link>https://srpihot.github.io/image1</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 09 Jan 2022 21:26:47 +0800</lastBuildDate><atom:link href="https://srpihot.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jan 2022 11:38:38 +0800</lastBuildDate><atom:link href="https://srpihot.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringBoot常用模块</title>
+      <link>https://srpihot.github.io/post/springboot%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Fri, 14 Jan 2022 11:38:38 +0800</pubDate>
+      
+      <guid>https://srpihot.github.io/post/springboot%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/</guid>
+      <description>我讨厌JAVA，但SpringBoot永远滴神！JPA狗都不用</description>
+    </item>
+    
+    <item>
+      <title>Linux Command整理</title>
+      <link>https://srpihot.github.io/post/linux-command%E6%95%B4%E7%90%86/</link>
+      <pubDate>Fri, 14 Jan 2022 11:27:58 +0800</pubDate>
+      
+      <guid>https://srpihot.github.io/post/linux-command%E6%95%B4%E7%90%86/</guid>
+      <description>本文初写于2019-3-29，未完待续，持续更新</description>
+    </item>
+    
+    <item>
+      <title>DOS &amp;&amp; CMD整理</title>
+      <link>https://srpihot.github.io/post/dos-cmd%E6%95%B4%E7%90%86/</link>
+      <pubDate>Fri, 14 Jan 2022 11:27:36 +0800</pubDate>
+      
+      <guid>https://srpihot.github.io/post/dos-cmd%E6%95%B4%E7%90%86/</guid>
+      <description>本文初写于2019-2-19，未完待续，持续更新</description>
+    </item>
+    
     <item>
       <title>New Start-从博客搭建开始</title>
       <link>https://srpihot.github.io/post/new-start/</link>

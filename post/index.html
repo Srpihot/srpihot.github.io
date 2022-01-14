@@ -78,6 +78,43 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>SpringBoot常用模块
+</h2>
+</header>
+<section class=entry-content>
+<p>前言 本文主要用于个人总结SpringBoot开发中，一些常用的Utils类的使用，方便自己cv。
+文件上传 首先在application.yaml文件里，添加如下设置：
+1 2 3 4 5 6 7 spring: servlet: multipart: # 设置单个文件大小 max-file-size: 20MB # 设置单次请求文件的总大小 max-request-size: 200MB Utils类代码：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 public class FileUtils { public static void uploadFileByByte(byte[] file, String filePath, String fileName) throws Exception { File targetFile = new File(filePath); if(!...</p>
+</section>
+<footer class=entry-footer><span title="2022-01-14 11:38:38 +0800 CST">January 14, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Srpihot</footer>
+<a class=entry-link aria-label="post link to SpringBoot常用模块" href=https://srpihot.github.io/post/springboot%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Linux Command整理
+</h2>
+</header>
+<section class=entry-content>
+<p>1.useradd 添加用户 useradd srpihot 创建srpihot用户 useradd -u 555 srpihot 创建srpihot用户，分配UID=555 useradd -g user1 srpihot 创建srpihot用户，分配到用户组user1里 useradd -d ~/etc srpihot 创建srpioht用户，并且分配家目录 2.passwd 修改密码 passwd srpihot 设置srpihot用户密码(仅root用户可用) passwd 修改当前密码 3.usermod 用户修改 usermod -d /home/new -m srpihot 给srpihot用户重新设置家目录 usermod -L srpihot 冻结srpihot用户 usermod -U srpihot 解锁srpihot用户 4.usedel 用户删除 userdel srpihot 删除srpihot用户 userdel -r srpihot 删除srpihot用户所有信息（家目录、邮件等） 5.groupadd 增加用户组 groupadd srpihot 增加srpihot用户组 6.groupdel 删除用户组 groupdel srpihot 删除srpihot用户组 7....</p>
+</section>
+<footer class=entry-footer><span title="2022-01-14 11:27:58 +0800 CST">January 14, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Srpihot</footer>
+<a class=entry-link aria-label="post link to Linux Command整理" href=https://srpihot.github.io/post/linux-command%E6%95%B4%E7%90%86/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>DOS && CMD整理
+</h2>
+</header>
+<section class=entry-content>
+<p>DOS: 内部命令： 1.dir /p 分屏显示 /w 一行五个分开显示 /s 显示当前盘符下所有目录 /a : h 显示隐藏目录 : s 显示系统文件 : d 只显示目录 : -d 只显示文件 : r 显示只读文件 : -r 显示非只读文件 /o : n 按照名字排序 : d 按照时间日期排序 : s 按照文件大小排序 : g 按照目录在前排序 tips:
+查找某个目录下的srpihot.txt dir /s srpihot.txt 显示以.txt后缀的文件 dir *.txt 2.cd cd d: 进入到d盘 cd srpihot 进入srpihot目录 cd .. 返回到上一级目录 cd nul >srpihot.txt 创建新文件 3....</p>
+</section>
+<footer class=entry-footer><span title="2022-01-14 11:27:36 +0800 CST">January 14, 2022</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Srpihot</footer>
+<a class=entry-link aria-label="post link to DOS && CMD整理" href=https://srpihot.github.io/post/dos-cmd%E6%95%B4%E7%90%86/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>New Start-从博客搭建开始
 </h2>
 </header>
