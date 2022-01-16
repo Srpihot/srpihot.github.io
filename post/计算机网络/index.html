@@ -1,0 +1,769 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>计算机网络 | 🇨🇳 Srpihot's Blog</title>
+<meta name=keywords content="计算机网络,编程基础">
+<meta name=description content="计算机入门四大内功之一-计算机网络">
+<meta name=author content="Srpihot">
+<link rel=canonical href=https://srpihot.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/>
+<meta name=google-site-verification content="Srpihot">
+<meta name=yandex-verification content="Srpihot">
+<meta name=msvalidate.01 content="Srpihot">
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
+<link rel=preload href=https://gitee.com/Srpihot/myimage/raw/master/744a59.png as=image>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://srpihot.github.io/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://srpihot.github.io/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://srpihot.github.io/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://srpihot.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://srpihot.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.91.2">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="计算机网络">
+<meta property="og:description" content="计算机入门四大内功之一-计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://srpihot.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><meta property="og:image" content="https://srpihot.github.io/image1"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2022-01-16T11:04:09+08:00">
+<meta property="article:modified_time" content="2022-01-16T11:04:09+08:00"><meta property="og:site_name" content="Srpihot|啊噗Ultra|☭">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://srpihot.github.io/image1">
+<meta name=twitter:title content="计算机网络">
+<meta name=twitter:description content="计算机入门四大内功之一-计算机网络">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://srpihot.github.io/post/"},{"@type":"ListItem","position":2,"name":"计算机网络","item":"https://srpihot.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"计算机网络","name":"计算机网络","description":"计算机入门四大内功之一-计算机网络","keywords":["计算机网络","编程基础"],"articleBody":"前言 本文主要用于总结计算机网络相关知识与细节，相对于本科软工所学的计网基础，还会更新不同厂商与配置信息。借鉴CyC2018/CS-Notes计算机网络部分，在此基础上进行扩展与总结。\n目录 概述 物理层 数据链路层 网络层 传输层 应用层 参考文献 概述 什么是计算机网络 就是利用通信设备和线路将地理位置不同的、功能独立的多个计算机系统互连起来，以功能完善的网络软件(即网络通信协议、信息交换方式、网络操作系统等)实现网络中资源共享和信息传递的系统。 计算机网络的组成：\n 边缘部分由所有连接在因特网上的主机组成。这部分是用户直接使用的，用来 进行通信(传送数据、音频或视频)和资源共享。 核心部分由大量网络和连接这些网络的路由器组成。这部分是为边缘部分提供 服务的(提供连通性和交换)。  计算机网络分类：\n 作用范围：  广域网 WAN 城域网 MAN 局域网 LAN 个人区域网 PAN   依据网络使用者：  公用网 专用网   依据网络拓扑结构：  总线形 星型 环形 树形 网形    什么是ISP? 互联网服务提供商 ISP 可以从互联网管理机构获得许多 IP 地址，同时拥有通信线路以及路由器等联网设备，个人或机构向 ISP 缴纳一定的费用就可以接入互联网。\n目前的互联网是一种多层次 ISP 结构，ISP 根据覆盖面积的大小分为第一层 ISP、区域 ISP 和接入 ISP。互联网交换点 IXP 允许两个 ISP 直接相连而不用经过第三个 ISP。\n不同主机间通信方式：   客户-服务器（C/S）：客户是服务的请求方，服务器是服务的提供方。\n  对等（P2P）：不区分客户和服务器。\n  数据传输方式  电路交换  ​\t电路交换用于电话通信系统，两个用户要通信之前需要建立一条专用的物理链路，并且在整个通信过程中始终占用该链路。由于通信的过程中不可能一直在使用传输线路，因此电路交换对线路的利用率很低，往往不到 10%。\n  报文交换\n数据交换的单位是报文，报文携带有目的地址、源地址等信息。报文交换在交换节点采用存储转发的传输方式。\n  分组交换\n每个分组都有首部和尾部，包含了源地址和目的地址等控制信息，在同一个传输线路上同时传输多个分组互相不会影响，因此在同一条传输线路上允许同时传输多个分组，也就是说分组交换不需要占用传输线路。分组中分为数据报与虚电路两种方式。\n  数据报：\n高层协议会将报文拆分成若干带有序号和完整目的地址的分组，交换机根据转发表转发分组。\n  虚电路：\n虛电路方式要求在发送数据之前，在源主机和目的主机之间建立一条虚连接。一旦虚连接建立以后，用户发送的数据( 以分组为单位)将通过该路径按顺序传送到达目的主机。当通信完成之后用户发出释放虚电路请求，由网络清除该虚连接。\n  在一个邮局通信系统中，邮局收到一份邮件之后，先存储下来，然后把相同目的地的邮件一起转发到下一个目的地，这个过程就是存储转发过程，分组交换也使用了存储转发过程。\n   报文与分组的区别：\n简单的理解就是，把报文进行分组，然后每一组分别进行发送，最后再到目的主机进行组装成一个完整报文，这个过程是分组交换，而报文交换则是不讲报文分组，直接发送报文。\n 时延 总时延 = 排队时延 + 处理时延 + 传输时延 + 传播时延\n 排队时延  分组在路由器的输入队列和输出队列中排队等待的时间，取决于网络当前的通信量。\n 处理时延  主机或路由器收到分组时进行处理所需要的时间，例如分析首部、从分组中提取数据、进行差错检验或查找适当的路由等。\n 传输时延  主机或路由器传输数据帧所需要的时间。\n其中 l 表示数据帧的长度，v 表示传输速率。\n 传播时延  电磁波在信道中传播所需要花费的时间，电磁波传播的速度接近光速。\n其中 l 表示信道长度，v 表示电磁波在信道上的传播速度。\n计算机网络体系结构   五层协议\n  应用层 ：为特定应用程序提供数据传输服务，例如 HTTP、DNS 等协议。数据单位为报文。\n  传输层 ：为进程提供通用数据传输服务。也称为运输层。由于应用层协议很多，定义通用的传输层协议就可以支持不断增多的应用层协议。运输层包括两种协议：传输控制协议 TCP，提供面向连接、可靠的数据传输服务，数据单位为报文段；用户数据报协议 UDP，提供无连接、尽最大努力的数据传输服务，数据单位为用户数据报。TCP 主要提供完整性服务，UDP 主要提供及时性服务。\n  网络层 ：为主机提供数据传输服务。而传输层协议是为主机中的进程提供数据传输服务。网络层把传输层传递下来的报文段或者用户数据报封装成分组。\n  数据链路层 ：网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。\n  物理层 ：考虑的是怎样在传输媒体上传输数据比特流，而不是指具体的传输媒体。物理层的作用是尽可能屏蔽传输媒体和通信手段的差异，使数据链路层感觉不到这些差异。\n    OSI\n  ​\t其中表示层和会话层用途如下：\n 会话层:允许不同机器上的用户建立会话关系，提供对某些应用有用的增强服务会话，可被用于远程登录到分时系统或在两台机器间传递文件等应用中。管理对话和同步。在数据流中插入校验点。每次网络崩溃后，仅需要重传最后一个校验点以后的数据。 表示层:数据压缩、加密以及数据描述，这使得应用程序不必关心在各台主机中数据内部格式不同的问题。关心的是面向应用的信息的语法和语义。典型的例子是用一种大家一致同意的标准方法对数据编码。为了让采用不同表示法的计算机之间能进行通信，交换中使用的数据结构可以用抽象的方式来定义，并且使用标准的编码方式。表示层管理这些抽象数据结构，并且在计算机内部表示法和网络的标准表示法之间进行转换。  五层协议没有表示层和会话层，而是将这些功能留给应用程序开发者处理。\n TCP/IP  它只有四层，相当于五层协议中数据链路层和物理层合并为网络接口层。\nTCP/IP 体系结构不严格遵循 OSI 分层概念，应用层可能会直接使用 IP 层或者网络接口层。\n 数据在各层之间的传递过程  在向下的过程中，需要添加下层协议所需要的首部或者尾部，而在向上的过程中不断拆开首部和尾部。\n路由器只有下面三层协议，因为路由器位于网络核心中，不需要为进程或者应用程序提供服务，因此也就不需要传输层和应用层。\n物理层 通信方式 根据信息在传输线上的传送方向，分为以下三种通信方式：\n 单工通信：单向传输 半双工通信：双向交替传输 全双工通信：双向同时传输  带通调制 模拟信号是连续的信号，数字信号是离散的信号。带通调制把数字信号转换为模拟信号。\n 调幅(AM):载波的振幅随基带数字信号而变化。 调频(FM):载波的频率随基带数字信号而变化。. 调相(PM):载波的初始相位随基带数字信号而变化。  奈奎斯特与香农定理   奈奎斯特(Nyquist)无噪声下的码元速率极限值B与信道带宽H的关系:\n  最大数据传输率B = 2 × H 波特(Baud).\n  奈奎斯特公式-无噪信道传输能力公式:\n1 2 3 4  C = 2 × H × log2N (bps) C = B × log2N (bps) H为信道的带宽，即信道传输上、下限频率的差值，单位为Hz; . N为一个码元所取的离散值个数。       香农公式-带噪信道容量公式:\n   C = H × log2 ( 1 + S / N ) (bps)\n  S为信号功率，N为噪声功率，S/N为信噪比，通常把信噪比表示成10lg(S/N)分贝(dB)\n1 2  S/N=100 10lg (100) =20dB       编码与调制 传输介质 传输介质分为两大类:导向性传输介质(就是用一根实实在在的线来传播，如双绞线和光纤)和非导向性传输介质(在自由空间中自由传播，如红外线、微波)。导向性传输介质包含双绞线、同轴电缆和光纤。\n设备 物理层设备主要包含中继器和集线器，放大器和中继器都是起放大信号的作用，只不过放大器放大的是模拟信号，中继器放大的是数字信号。中继器是普通集线器的前身，集线器实际就是一种多端口的中继器。集线器一-般有4、8、16、24、32等数量的RJ45接口，通过这些接口，集线器便能为相应数量的计算机完成“中继”功能。由于它在网络中处于一种“中心”位置，因此集线器也叫作Hub。\n 集线器不能隔离冲突域。\n 数据链路层 基本功能  封装成帧  将网络层传下来的分组添加首部和尾部，用于标记帧的开始和结束。\n 透明传输  透明表示一个实际存在的事物看起来好像不存在一样。\n帧使用首部和尾部进行定界，如果帧的数据部分含有和首部尾部相同的内容，那么帧的开始和结束位置就会被错误的判定。需要在数据部分出现首部尾部相同的内容前面插入转义字符。如果数据部分出现转义字符，那么就在转义字符前面再加个转义字符。在接收端进行处理之后可以还原出原始数据。这个过程透明传输的内容是转义字符，用户察觉不到转义字符的存在。\n3. 差错检测 目前数据链路层广泛使用了循环冗余检验（CRC）来检查比特差错。\n信道分类  广播信道  一对多通信，一个节点发送的数据能够被广播信道上所有的节点接收到。\n所有的节点都在同一个广播信道上发送数据，因此需要有专门的控制方法进行协调，避免发生冲突（冲突也叫碰撞）。\n主要有两种控制方法进行协调，一个是使用信道复用技术，一是使用 CSMA/CD 协议。\n 点对点信道  一对一通信。\n因为不会发生碰撞，因此也比较简单，使用 PPP 协议进行控制。\n信道复用技术  频分复用  频分复用的所有主机在相同的时间占用不同的频率带宽资源。\n 时分复用  时分复用的所有主机在不同的时间占用相同的频率带宽资源。\n使用频分复用和时分复用进行通信，在通信的过程中主机会一直占用一部分信道资源。但是由于计算机数据的突发性质，通信过程没必要一直占用信道资源而不让出给其它用户使用，因此这两种方式对信道的利用率都不高。\n 统计时分复用  是对时分复用的一种改进，不固定每个用户在时分复用帧中的位置，只要有数据就集中起来组成统计时分复用帧然后发送。\n 波分复用  光的频分复用。由于光的频率很高，因此习惯上用波长而不是频率来表示所使用的光载波。\n 码分复用  为每个用户分配 m bit 的码片，并且所有的码片正交，对于任意两个码片 和 有\n为了讨论方便，取 m=8，设码片 为 00011011。在拥有该码片的用户发送比特 1 时就发送该码片，发送比特 0 时就发送该码片的反码 11100100。\n在计算时将 00011011 记作 (-1 -1 -1 +1 +1 -1 +1 +1)，可以得到\n其中 为 的反码。\n利用上面的式子我们知道，当接收端使用码片 对接收到的数据进行内积运算时，结果为 0 的是其它用户发送的数据，结果为 1 的是用户发送的比特 1，结果为 -1 的是用户发送的比特 0。\n码分复用需要发送的数据量为原先的 m 倍。\nCSMA/CD 协议 CSMA/CD 表示载波监听多点接入 / 碰撞检测。\n 多点接入 ：说明这是总线型网络，许多主机以多点的方式连接到总线上。 载波监听 ：每个主机都必须不停地监听信道。在发送前，如果监听到信道正在使用，就必须等待。 碰撞检测 ：在发送中，如果监听到信道已有其它主机正在发送数据，就表示发生了碰撞。虽然每个主机在发送数据之前都已经监听到信道为空闲，但是由于电磁波的传播时延的存在，还是有可能会发生碰撞。  记端到端的传播时延为 τ，最先发送的站点最多经过 2τ 就可以知道是否发生了碰撞，称 2τ 为 争用期 。只有经过争用期之后还没有检测到碰撞，才能肯定这次发送不会发生碰撞。\n当发生碰撞时，站点要停止发送，等待一段时间再发送。这个时间采用 截断二进制指数退避算法 来确定。从离散的整数集合 {0, 1, .., (2k-1)} 中随机取出一个数，记作 r，然后取 r 倍的争用期作为重传等待时间。\nPPP 协议 互联网用户通常需要连接到某个 ISP 之后才能接入到互联网，PPP 协议是用户计算机和 ISP 进行通信时所使用的数据链路层协议。\nPPP 的帧格式：\n F 字段为帧的定界符 A 和 C 字段暂时没有意义 FCS 字段是使用 CRC 的检验序列 信息部分的长度不超过 1500  MAC 地址 MAC 地址是链路层地址，长度为 6 字节（48 位），用于唯一标识网络适配器（网卡）。\nMAC地址全球唯一，由 IEEE对这些地址进行管理和分配。\n每个地址由两部分组成，分别是供应商代码和序列号。其中前24位二进制代表该供应商代码。剩下的24位由厂商自己分配。\n局域网 局域网是一种典型的广播信道，主要特点是网络为一个单位所拥有，且地理范围和站点数目均有限。\n主要有以太网、令牌环网、FDDI 和 ATM 等局域网技术，目前以太网占领着有线局域网市场。\n可以按照网络拓扑结构对局域网进行分类：\n以太网 以太网是一种星型拓扑结构局域网。\n早期使用集线器进行连接，集线器是一种物理层设备， 作用于比特而不是帧，当一个比特到达接口时，集线器重新生成这个比特，并将其能量强度放大，从而扩大网络的传输距离，之后再将这个比特发送到其它所有接口。如果集线器同时收到两个不同接口的帧，那么就发生了碰撞。\n目前以太网使用交换机替代了集线器，交换机是一种链路层设备，它不会发生碰撞，能根据 MAC 地址进行存储转发。\n以太网帧格式：\n 类型 ：标记上层使用的协议； 数据 ：长度在 46-1500 之间，如果太小则需要填充； FCS ：帧检验序列，使用的是 CRC 检验方法；  交换机 交换机具有自学习能力，学习的是交换表的内容，交换表中存储着 MAC 地址到接口的映射。\n正是由于这种自学习能力，因此交换机是一种即插即用设备，不需要网络管理员手动配置交换表内容。\n下图中，交换机有 4 个接口，主机 A 向主机 B 发送数据帧时，交换机把主机 A 到接口 1 的映射写入交换表中。为了发送数据帧到 B，先查交换表，此时没有主机 B 的表项，那么主机 A 就发送广播帧，主机 C 和主机 D 会丢弃该帧，主机 B 回应该帧向主机 A 发送数据包时，交换机查找交换表得到主机 A 映射的接口为 1，就发送数据帧到接口 1，同时交换机添加主机 B 到接口 2 的映射。\n虚拟局域网(VLAN) 虚拟局域网可以建立与物理位置无关的逻辑组，只有在同一个虚拟局域网中的成员才会收到链路层广播信息。\n例如下图中 (A1, A2, A3, A4) 属于一个虚拟局域网，A1 发送的广播会被 A2、A3、A4 收到，而其它站点收不到。\n使用 VLAN 干线连接来建立虚拟局域网，每台交换机上的一个特殊接口被设置为干线接口，以互连 VLAN 交换机。IEEE 定义了一种扩展的以太网帧格式 802.1Q（还有一种ISL协议，但支持思科的设备），它在标准以太网帧上加进了 4 字节首部 VLAN 标签，用于表示该帧属于哪一个虚拟局域网。\n具体的工作原理如下：\n PC发送数据帧进入交换机，会被打上vlan tag；vlan tag中的vlan id就是收到帧的接口的所属vlan；一旦数据帧被打上vlan tag，就变成了802.1Q（在源Mac地址和Type之间携带vlan tag的帧格式，计算机不识别）格式的帧 交换机检查数据帧的目的MAC地址，进行判断；如果目的MAC对应的接口允许tag中的vlan id通过，则数据帧可以转发；否则，丢弃该帧 数据帧从出接口发往PC前，会剥离vlan tag，使之还原为标准的以太网帧格式   VLAN是在第二层上实现隔离广播域\n 当一条链路中需要承载多VLAN信息的时候，需使用trunk来实现。例如下图：\nSTP 生成树协议 STP（Spanning Tree Protocol）是生成树协议的英文缩写，可应用于计算机网络中树形拓扑结构建立，主要作用是防止网桥网络中的冗余链路形成环路等工作。\n 通过将特定的端口选为 Blocking state，来实现无环的拓扑； IEEE 802.1D 规定了这一行为； Cisco采用IEEE802.1D的增强的私有协议生成树PVST+;  STP工作原理如下：\n 在每一个广播域选择一个root。并遵循下述选择优选级。 在每一个非根桥选择一个根端口。并遵循下述选择优选级。 每个段选择一个制定端口。并遵循下述选择优选级。 选择一个非指定端口进行Block。并遵循下述选择优选级。  选择优先级：\n  最低的根桥ID\n  最低的根路径代价\n   链路速度 花销代价     10Gb/s 2   1Gb/s 4   100Mb/s 19   10Mb/s 100      最低发送者桥ID\n  最低端口ID\n  STP端口状态将从Blockiing-Listening-Learning-Forwarding的四种状态。\n链路聚合 把连接到同一台交换机上的多个物理端口捆绑为一个逻辑端口的过程叫做链路聚合。聚合组内只要还有物理端口存活，链路就不会中断，提高链路可靠性避免了STP计算，聚合组内物理端口不会被闭塞，增加链路传输带宽，聚合后的链路会基于流自动负载分担。\n网络层 因为网络层是整个互联网的核心，因此应当让网络层尽可能简单。网络层向上只提供简单灵活的、无连接的、尽最大努力交互的数据报服务。\n使用 IP 协议，可以把异构的物理网络连接起来，使得在网络层看起来好像是一个统一的网络。\n与 IP 协议配套使用的还有三个协议：\n 地址解析协议 ARP（Address Resolution Protocol） 网际控制报文协议 ICMP（Internet Control Message Protocol） 网际组管理协议 IGMP（Internet Group Management Protocol）  IP 数据报格式   版本 : 有 4（IPv4）和 6（IPv6）两个值；\n  首部长度 : 占 4 位，因此最大值为 15。值为 1 表示的是 1 个 32 位字的长度，也就是 4 字节。因为固定部分长度为 20 字节，因此该值最小为 5。如果可选字段的长度不是 4 字节的整数倍，就用尾部的填充部分来填充。\n  区分服务 : 用来获得更好的服务，一般情况下不使用。\n  总长度 : 包括首部长度和数据部分长度。\n  生存时间 ：TTL，它的存在是为了防止无法交付的数据报在互联网中不断兜圈子。以路由器跳数为单位，当 TTL 为 0 时就丢弃数据报。\n  协议 ：指出携带的数据应该上交给哪个协议进行处理，例如 ICMP、TCP、UDP 等。\n  首部检验和 ：因为数据报每经过一个路由器，都要重新计算检验和，因此检验和不包含数据部分可以减少计算的工作量。\n  标识 : 在数据报长度过长从而发生分片的情况下，相同数据报的不同分片具有相同的标识符。\n  片偏移 : 和标识符一起，用于发生分片的情况。片偏移的单位为 8 字节。\n  IP 地址编址方式 IP 地址的编址方式经历了三个历史阶段：\n  分类\n由两部分组成，网络号和主机号，其中不同分类具有不同的网络号长度，并且是固定的。\nIP 地址 ::= {, }\n  子网划分\n通过在主机号字段中拿一部分作为子网号，把两级 IP 地址划分为三级 IP 地址。\nIP 地址 ::= {, , }\n要使用子网，必须配置子网掩码。一个 B 类地址的默认子网掩码为 255.255.0.0，如果 B 类地址的子网占两个比特，那么子网掩码为 11111111 11111111 11000000 00000000，也就是 255.255.192.0。\n注意，外部网络看不到子网的存在。\n  无分类\n无分类编址 CIDR 消除了传统 A 类、B 类和 C 类地址以及划分子网的概念，使用网络前缀和主机号来对 IP 地址进行编码，网络前缀的长度可以根据需要变化。\nIP 地址 ::= {, }\nCIDR 的记法上采用在 IP 地址后面加上网络前缀长度的方法，例如 128.14.35.7/20 表示前 20 位为网络前缀。\nCIDR 的地址掩码可以继续称为子网掩码，子网掩码首 1 长度为网络前缀的长度。\n一个 CIDR 地址块中有很多地址，一个 CIDR 表示的网络就可以表示原来的很多个网络，并且在路由表中只需要一个路由就可以代替原来的多个路由，减少了路由表项的数量。把这种通过使用网络前缀来减少路由表项的方式称为路由聚合，也称为 构成超网 。\n在路由表中的项目由“网络前缀”和“下一跳地址”组成，在查找时可能会得到不止一个匹配结果，应当采用最长前缀匹配来确定应该匹配哪一个。\n  地址解析协议 ARP 网络层实现主机之间的通信，而链路层实现具体每段链路之间的通信。因此在通信过程中，IP 数据报的源地址和目的地址始终不变，而 MAC 地址随着链路的改变而改变。\nARP 实现由 IP 地址得到 MAC 地址。\n每个主机都有一个 ARP 高速缓存，里面有本局域网上的各主机和路由器的 IP 地址到 MAC 地址的映射表。\n如果主机 A 知道主机 B 的 IP 地址，但是 ARP 高速缓存中没有该 IP 地址到 MAC 地址的映射，此时主机 A 通过广播的方式发送 ARP 请求分组，主机 B 收到该请求后会发送 ARP 响应分组给主机 A 告知其 MAC 地址，随后主机 A 向其高速缓存中写入主机 B 的 IP 地址到 MAC 地址的映射。\n网际控制报文协议 ICMP ICMP 是为了更有效地转发 IP 数据报和提高交付成功的机会。它封装在 IP 数据报中，但是不属于高层协议。\nICMP 报文分为差错报告报文和询问报文。\n Ping  Ping 是 ICMP 的一个重要应用，主要用来测试两台主机之间的连通性。\nPing 的原理是通过向目的主机发送 ICMP Echo 请求报文，目的主机收到之后会发送 Echo 回答报文。Ping 会根据时间和成功响应的次数估算出数据包往返时间以及丢包率。\n Traceroute  Traceroute 是 ICMP 的另一个应用，用来跟踪一个分组从源点到终点的路径。\nTraceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报，并由目的主机发送终点不可达差错报告报文。\n 源主机向目的主机发送一连串的 IP 数据报。第一个数据报 P1 的生存时间 TTL 设置为 1，当 P1 到达路径上的第一个路由器 R1 时，R1 收下它并把 TTL 减 1，此时 TTL 等于 0，R1 就把 P1 丢弃，并向源主机发送一个 ICMP 时间超过差错报告报文； 源主机接着发送第二个数据报 P2，并把 TTL 设置为 2。P2 先到达 R1，R1 收下后把 TTL 减 1 再转发给 R2，R2 收下后也把 TTL 减 1，由于此时 TTL 等于 0，R2 就丢弃 P2，并向源主机发送一个 ICMP 时间超过差错报文。 不断执行这样的步骤，直到最后一个数据报刚刚到达目的主机，主机不转发数据报，也不把 TTL 值减 1。但是因为数据报封装的是无法交付的 UDP，因此目的主机要向源主机发送 ICMP 终点不可达差错报告报文。 之后源主机知道了到达目的主机所经过的路由器 IP 地址以及到达每个路由器的往返时间。  虚拟专用网 VPN 由于 IP 地址的紧缺，一个机构能申请到的 IP 地址数往往远小于本机构所拥有的主机数。并且一个机构并不需要把所有的主机接入到外部的互联网中，机构内的计算机可以使用仅在本机构有效的 IP 地址（专用地址）。\n有三个专用地址块：\n 10.0.0.0 ~ 10.255.255.255 172.16.0.0 ~ 172.31.255.255 192.168.0.0 ~ 192.168.255.255  VPN 使用公用的互联网作为本机构各专用网之间的通信载体。专用指机构内的主机只与本机构内的其它主机通信；虚拟指好像是，而实际上并不是，它有经过公用的互联网。\n下图中，场所 A 和 B 的通信经过互联网，如果场所 A 的主机 X 要和另一个场所 B 的主机 Y 通信，IP 数据报的源地址是 10.1.0.1，目的地址是 10.2.0.3。数据报先发送到与互联网相连的路由器 R1，R1 对内部数据进行加密，然后重新加上数据报的首部，源地址是路由器 R1 的全球地址 125.1.2.3，目的地址是路由器 R2 的全球地址 194.4.5.6。路由器 R2 收到数据报后将数据部分进行解密，恢复原来的数据报，此时目的地址为 10.2.0.3，就交付给 Y。\n网络地址转换 NAT 专用网内部的主机使用本地 IP 地址又想和互联网上的主机通信时，可以使用 NAT 来将本地 IP 转换为全球 IP。\n在以前，NAT 将本地 IP 和全球 IP 一一对应，这种方式下拥有 n 个全球 IP 地址的专用网内最多只可以同时有 n 台主机接入互联网。为了更有效地利用全球 IP 地址，现在常用的 NAT 转换表把传输层的端口号也用上了，使得多个专用网内部的主机共用一个全球 IP 地址。使用端口号的 NAT 也叫做网络地址与端口转换 NAPT。\n路由器的结构 路由器从功能上可以划分为：路由选择和分组转发。\n分组转发结构由三个部分组成：交换结构、一组输入端口和一组输出端口。\n  路由器分组转发流程\n  从数据报的首部提取目的主机的 IP 地址 D，得到目的网络地址 N。\n  若 N 就是与此路由器直接相连的某个网络地址，则进行直接交付；\n  若路由表中有目的地址为 D 的特定主机路由，则把数据报传送给表中所指明的下一跳路由器；\n  若路由表中有到达网络 N 的路由，则把数据报传送给路由表中所指明的下一跳路由器；\n  若路由表中有一个默认路由，则把数据报传送给路由表中所指明的默认路由器；\n  报告转发分组出错。\n    路由选择协议 路由选择协议都是自适应的，能随着网络通信量和拓扑结构的变化而自适应地进行调整。\n互联网可以划分为许多较小的自治系统 AS，一个 AS 可以使用一种和别的 AS 不同的路由选择协议。\n可以把路由选择协议划分为两大类：\n 自治系统内部的路由选择：RIP 和 OSPF 自治系统间的路由选择：BGP  1. 内部网关协议 RIP RIP 是一种基于距离向量的路由选择协议。距离是指跳数，直接相连的路由器跳数为 1。跳数最多为 15，超过 15 表示不可达。\nRIP 按固定的时间间隔仅和相邻路由器交换自己的路由表，经过若干次交换之后，所有路由器最终会知道到达本自治系统中任何一个网络的最短距离和下一跳路由器地址。\n距离向量算法：\n 对地址为 X 的相邻路由器发来的 RIP 报文，先修改报文中的所有项目，把下一跳字段中的地址改为 X，并把所有的距离字段加 1； 对修改后的 RIP 报文中的每一个项目，进行以下步骤： 若原来的路由表中没有目的网络 N，则把该项目添加到路由表中； 否则：若下一跳路由器地址是 X，则把收到的项目替换原来路由表中的项目；否则：若收到的项目中的距离 d 小于路由表中的距离，则进行更新（例如原始路由表项为 Net2, 5, P，新表项为 Net2, 4, X，则更新）；否则什么也不做。 若 3 分钟还没有收到相邻路由器的更新路由表，则把该相邻路由器标为不可达，即把距离置为 16。  RIP 协议实现简单，开销小。但是 RIP 能使用的最大距离为 15，限制了网络的规模。并且当网络出现故障时，要经过比较长的时间才能将此消息传送到所有路由器。\n2. 内部网关协议 OSPF 开放最短路径优先 OSPF，是为了克服 RIP 的缺点而开发出来的。\n开放表示 OSPF 不受某一家厂商控制，而是公开发表的；最短路径优先表示使用了 Dijkstra 提出的最短路径算法 SPF。\nOSPF 具有以下特点：\n 向本自治系统中的所有路由器发送信息，这种方法是洪泛法。 发送的信息就是与相邻路由器的链路状态，链路状态包括与哪些路由器相连以及链路的度量，度量用费用、距离、时延、带宽等来表示。 只有当链路状态发生变化时，路由器才会发送信息。  所有路由器都具有全网的拓扑结构图，并且是一致的。相比于 RIP，OSPF 的更新过程收敛的很快。\n3. 外部网关协议 BGP BGP（Border Gateway Protocol，边界网关协议）\nAS 之间的路由选择很困难，主要是由于：\n 互联网规模很大； 各个 AS 内部使用不同的路由选择协议，无法准确定义路径的度量； AS 之间的路由选择必须考虑有关的策略，比如有些 AS 不愿意让其它 AS 经过。  BGP 只能寻找一条比较好的路由，而不是最佳路由。\n每个 AS 都必须配置 BGP 发言人，通过在两个相邻 BGP 发言人之间建立 TCP 连接来交换路由信息。\n传输层 应用层 参考文献  CyC2018/CS-Notes: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计 (github.com) 《计算机网络》谢希仁 JamesF.Kurose, KeithW.Ross, 库罗斯, 等. 计算机网络: 自顶向下方法 [M]. 机械工业出版社, 2014. W.RichardStevens. TCP/IP 详解. 卷 1, 协议 [M]. 机械工业出版社, 2006.  ","wordCount":"1011","inLanguage":"en","datePublished":"2022-01-16T11:04:09+08:00","dateModified":"2022-01-16T11:04:09+08:00","author":{"@type":"Person","name":"Srpihot"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://srpihot.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"},"publisher":{"@type":"Organization","name":"🇨🇳 Srpihot's Blog","logo":{"@type":"ImageObject","url":"https://srpihot.github.io/%3Clink%20/%20abs%20url%3E"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://srpihot.github.io/ accesskey=h title="Home (Alt + H)">
+<img src=https://gitee.com/Srpihot/myimage/raw/master/744a59.png alt=logo aria-label=logo height=35>Home</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://srpihot.github.io/archives/ title=Archive>
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href=https://srpihot.github.io/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://srpihot.github.io/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://srpihot.github.io/search title="Search 🔍 (Alt + /)" accesskey=/>
+<span>Search 🔍</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://srpihot.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://srpihot.github.io/post/>Posts</a></div>
+<h1 class=post-title>
+计算机网络
+</h1>
+<div class=post-description>
+计算机入门四大内功之一-计算机网络
+</div>
+<div class=post-meta><span title="2022-01-16 11:04:09 +0800 CST">January 16, 2022</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Srpihot&nbsp;|&nbsp;<a href=https://github.com/%3cpath_to_repo%3e/content/post/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
+</div>
+</header>
+<div class=post-content><h2 id=前言>前言<a hidden class=anchor aria-hidden=true href=#前言>#</a></h2>
+<p>本文主要用于总结计算机网络相关知识与细节，相对于本科软工所学的计网基础，还会更新不同厂商与配置信息。借鉴<a href=https://github.com/CyC2018/cs-notes>CyC2018/CS-Notes</a>计算机网络部分，在此基础上进行扩展与总结。</p>
+<h2 id=目录>目录<a hidden class=anchor aria-hidden=true href=#目录>#</a></h2>
+<h3 id=概述什么是计算机网络><a href=#%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C>概述</a><a hidden class=anchor aria-hidden=true href=#概述什么是计算机网络>#</a></h3>
+<h3 id=物理层物理层><a href=#%E7%89%A9%E7%90%86%E5%B1%82>物理层</a><a hidden class=anchor aria-hidden=true href=#物理层物理层>#</a></h3>
+<h3 id=数据链路层数据链路层><a href=#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82>数据链路层</a><a hidden class=anchor aria-hidden=true href=#数据链路层数据链路层>#</a></h3>
+<h3 id=网络层网络层><a href=#%E7%BD%91%E7%BB%9C%E5%B1%82>网络层</a><a hidden class=anchor aria-hidden=true href=#网络层网络层>#</a></h3>
+<h3 id=传输层传输层><a href=#%E4%BC%A0%E8%BE%93%E5%B1%82>传输层</a><a hidden class=anchor aria-hidden=true href=#传输层传输层>#</a></h3>
+<h3 id=应用层应用层><a href=#%E5%BA%94%E7%94%A8%E5%B1%82>应用层</a><a hidden class=anchor aria-hidden=true href=#应用层应用层>#</a></h3>
+<h3 id=参考文献参考文献><a href=#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE>参考文献</a><a hidden class=anchor aria-hidden=true href=#参考文献参考文献>#</a></h3>
+<h2 id=概述>概述<a hidden class=anchor aria-hidden=true href=#概述>#</a></h2>
+<h3 id=什么是计算机网络>什么是计算机网络<a hidden class=anchor aria-hidden=true href=#什么是计算机网络>#</a></h3>
+<p>就是利用通信设备和线路将地理位置不同的、功能独立的多个计算机系统互连起来，以功能完善的网络软件(即网络通信协议、信息交换方式、网络操作系统等)实现网络中资源共享和信息传递的系统。
+计算机网络的组成：</p>
+<ul>
+<li>边缘部分由所有连接在因特网上的主机组成。这部分是用户直接使用的，用来
+进行通信(传送数据、音频或视频)和资源共享。</li>
+<li>核心部分由大量网络和连接这些网络的路由器组成。这部分是为边缘部分提供
+服务的(提供连通性和交换)。</li>
+</ul>
+<p>计算机网络分类：</p>
+<ul>
+<li>作用范围：
+<ul>
+<li>广域网 WAN</li>
+<li>城域网 MAN</li>
+<li>局域网 LAN</li>
+<li>个人区域网 PAN</li>
+</ul>
+</li>
+<li>依据网络使用者：
+<ul>
+<li>公用网</li>
+<li>专用网</li>
+</ul>
+</li>
+<li>依据网络拓扑结构：
+<ul>
+<li>总线形</li>
+<li>星型</li>
+<li>环形</li>
+<li>树形</li>
+<li>网形</li>
+</ul>
+</li>
+</ul>
+<h3 id=什么是isp>什么是ISP?<a hidden class=anchor aria-hidden=true href=#什么是isp>#</a></h3>
+<p>互联网服务提供商 ISP 可以从互联网管理机构获得许多 IP 地址，同时拥有通信线路以及路由器等联网设备，个人或机构向 ISP 缴纳一定的费用就可以接入互联网。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/72be01cd-41ae-45f7-99b9-a8d284e44dd4.png alt>
+</p>
+<p>目前的互联网是一种多层次 ISP 结构，ISP 根据覆盖面积的大小分为第一层 ISP、区域 ISP 和接入 ISP。互联网交换点 IXP 允许两个 ISP 直接相连而不用经过第三个 ISP。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/3be42601-9d33-4d29-8358-a9d16453af93.png alt>
+</p>
+<h3 id=不同主机间通信方式>不同主机间通信方式：<a hidden class=anchor aria-hidden=true href=#不同主机间通信方式>#</a></h3>
+<ul>
+<li>
+<p>客户-服务器（C/S）：客户是服务的请求方，服务器是服务的提供方。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/914894c2-0bc4-46b5-bef9-0316a69ef521.jpg alt>
+</p>
+</li>
+<li>
+<p>对等（P2P）：不区分客户和服务器。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/42430e94-3137-48c0-bdb6-3cebaf9102e3.jpg alt>
+</p>
+</li>
+</ul>
+<h3 id=数据传输方式>数据传输方式<a hidden class=anchor aria-hidden=true href=#数据传输方式>#</a></h3>
+<ul>
+<li>电路交换</li>
+</ul>
+<p>​ 电路交换用于电话通信系统，两个用户要通信之前需要建立一条专用的物理链路，并且在整个通信过程中始终占用该链路。由于通信的过程中不可能一直在使用传输线路，因此电路交换对线路的利用率很低，往往不到 10%。</p>
+<ul>
+<li>
+<p>报文交换</p>
+<p>数据交换的单位是报文，报文携带有目的地址、源地址等信息。报文交换在交换节点采用存储转发的传输方式。</p>
+</li>
+<li>
+<p>分组交换</p>
+<p>每个分组都有首部和尾部，包含了源地址和目的地址等控制信息，在同一个传输线路上同时传输多个分组互相不会影响，因此在同一条传输线路上允许同时传输多个分组，也就是说分组交换不需要占用传输线路。分组中分为数据报与虚电路两种方式。</p>
+<ul>
+<li>
+<p>数据报：</p>
+<p>高层协议会将报文拆分成若干带有序号和完整目的地址的分组，交换机根据转发表转发分组。</p>
+</li>
+<li>
+<p>虚电路：</p>
+<p>虛电路方式要求在发送数据之前，在源主机和目的主机之间建立一条虚连接。一旦虚连接建立以后，用户发送的数据( 以分组为单位)将通过该路径按顺序传送到达目的主机。当通信完成之后用户发出释放虚电路请求，由网络清除该虚连接。</p>
+</li>
+</ul>
+<p>在一个邮局通信系统中，邮局收到一份邮件之后，先存储下来，然后把相同目的地的邮件一起转发到下一个目的地，这个过程就是存储转发过程，分组交换也使用了存储转发过程。</p>
+</li>
+</ul>
+<p><img loading=lazy src=https://srpihot-image.oss-cn-hongkong.aliyuncs.com/img/20220116124221.png alt>
+</p>
+<blockquote>
+<p>报文与分组的区别：</p>
+<p>简单的理解就是，把报文进行分组，然后每一组分别进行发送，最后再到目的主机进行组装成一个完整报文，这个过程是分组交换，而报文交换则是不讲报文分组，直接发送报文。</p>
+</blockquote>
+<h3 id=时延>时延<a hidden class=anchor aria-hidden=true href=#时延>#</a></h3>
+<p><strong>总时延 = 排队时延 + 处理时延 + 传输时延 + 传播时延</strong></p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/4b2ae78c-e254-44df-9e37-578e2f2bef52.jpg alt>
+</p>
+<ul>
+<li>排队时延</li>
+</ul>
+<p>分组在路由器的输入队列和输出队列中排队等待的时间，取决于网络当前的通信量。</p>
+<ul>
+<li>处理时延</li>
+</ul>
+<p>主机或路由器收到分组时进行处理所需要的时间，例如分析首部、从分组中提取数据、进行差错检验或查找适当的路由等。</p>
+<ul>
+<li>传输时延</li>
+</ul>
+<p>主机或路由器传输数据帧所需要的时间。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/dcdbb96c-9077-4121-aeb8-743e54ac02a4.png alt>
+</p>
+<p>其中 l 表示数据帧的长度，v 表示传输速率。</p>
+<ul>
+<li>传播时延</li>
+</ul>
+<p>电磁波在信道中传播所需要花费的时间，电磁波传播的速度接近光速。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/a1616dac-0e12-40b2-827d-9e3f7f0b940d.png alt>
+</p>
+<p>其中 l 表示信道长度，v 表示电磁波在信道上的传播速度。</p>
+<h3 id=计算机网络体系结构>计算机网络体系结构<a hidden class=anchor aria-hidden=true href=#计算机网络体系结构>#</a></h3>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/0fa6c237-a909-4e2a-a771-2c5485cd8ce0.png alt>
+</p>
+<ul>
+<li>
+<p>五层协议</p>
+<ul>
+<li>
+<p><strong>应用层</strong> ：为特定应用程序提供数据传输服务，例如 HTTP、DNS 等协议。数据单位为报文。</p>
+</li>
+<li>
+<p><strong>传输层</strong> ：为进程提供通用数据传输服务。也称为运输层。由于应用层协议很多，定义通用的传输层协议就可以支持不断增多的应用层协议。运输层包括两种协议：传输控制协议 TCP，提供面向连接、可靠的数据传输服务，数据单位为报文段；用户数据报协议 UDP，提供无连接、尽最大努力的数据传输服务，数据单位为用户数据报。TCP 主要提供完整性服务，UDP 主要提供及时性服务。</p>
+</li>
+<li>
+<p><strong>网络层</strong> ：为主机提供数据传输服务。而传输层协议是为主机中的进程提供数据传输服务。网络层把传输层传递下来的报文段或者用户数据报封装成分组。</p>
+</li>
+<li>
+<p><strong>数据链路层</strong> ：网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。</p>
+</li>
+<li>
+<p><strong>物理层</strong> ：考虑的是怎样在传输媒体上传输数据比特流，而不是指具体的传输媒体。物理层的作用是尽可能屏蔽传输媒体和通信手段的差异，使数据链路层感觉不到这些差异。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>OSI</p>
+</li>
+</ul>
+<p>​ 其中表示层和会话层用途如下：</p>
+<ul>
+<li><strong>会话层</strong>:允许不同机器上的用户建立会话关系，提供对某些应用有用的增强服务会话，可被用于远程登录到分时系统或在两台机器间传递文件等应用中。管理对话和同步。在数据流中插入校验点。每次网络崩溃后，仅需要重传最后一个校验点以后的数据。</li>
+<li><strong>表示层</strong>:数据压缩、加密以及数据描述，这使得应用程序不必关心在各台主机中数据内部格式不同的问题。关心的是面向应用的信息的语法和语义。典型的例子是用一种大家一致同意的标准方法对数据编码。为了让采用不同表示法的计算机之间能进行通信，交换中使用的数据结构可以用抽象的方式来定义，并且使用标准的编码方式。表示层管理这些抽象数据结构，并且在计算机内部表示法和网络的标准表示法之间进行转换。</li>
+</ul>
+<p>五层协议没有表示层和会话层，而是将这些功能留给应用程序开发者处理。</p>
+<ul>
+<li>TCP/IP</li>
+</ul>
+<p>它只有四层，相当于五层协议中数据链路层和物理层合并为网络接口层。</p>
+<p>TCP/IP 体系结构不严格遵循 OSI 分层概念，应用层可能会直接使用 IP 层或者网络接口层。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/48d79be8-085b-4862-8a9d-18402eb93b31.png alt>
+</p>
+<ul>
+<li>数据在各层之间的传递过程</li>
+</ul>
+<p>在向下的过程中，需要添加下层协议所需要的首部或者尾部，而在向上的过程中不断拆开首部和尾部。</p>
+<p>路由器只有下面三层协议，因为路由器位于网络核心中，不需要为进程或者应用程序提供服务，因此也就不需要传输层和应用层。</p>
+<p><img loading=lazy src=https://srpihot-image.oss-cn-hongkong.aliyuncs.com/img/transmit.png alt>
+</p>
+<h2 id=物理层>物理层<a hidden class=anchor aria-hidden=true href=#物理层>#</a></h2>
+<h3 id=通信方式>通信方式<a hidden class=anchor aria-hidden=true href=#通信方式>#</a></h3>
+<p>根据信息在传输线上的传送方向，分为以下三种通信方式：</p>
+<ul>
+<li>单工通信：单向传输</li>
+<li>半双工通信：双向交替传输</li>
+<li>全双工通信：双向同时传输</li>
+</ul>
+<h3 id=带通调制>带通调制<a hidden class=anchor aria-hidden=true href=#带通调制>#</a></h3>
+<p>模拟信号是连续的信号，数字信号是离散的信号。带通调制把数字信号转换为模拟信号。</p>
+<ul>
+<li>调幅(AM):载波的振幅随基带数字信号而变化。</li>
+<li>调频(FM):载波的频率随基带数字信号而变化。.</li>
+<li>调相(PM):载波的初始相位随基带数字信号而变化。</li>
+</ul>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/c34f4503-f62c-4043-9dc6-3e03288657df.jpg alt>
+</p>
+<h3 id=奈奎斯特与香农定理>奈奎斯特与香农定理<a hidden class=anchor aria-hidden=true href=#奈奎斯特与香农定理>#</a></h3>
+<ul>
+<li>
+<p>奈奎斯特(Nyquist)无噪声下的<code>码元速率极限值B</code>与<code>信道带宽H</code>的关系:</p>
+<ul>
+<li>
+<p>最大数据传输率<code>B = 2 × H </code>波特(Baud).</p>
+</li>
+<li>
+<p>奈奎斯特公式-无噪信道传输能力公式:</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>C <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span> × H × log2N <span style=color:#f92672>(</span>bps<span style=color:#f92672>)</span>
+C <span style=color:#f92672>=</span> B × log2N <span style=color:#f92672>(</span>bps<span style=color:#f92672>)</span>
+H为信道的带宽，即信道传输上、下限频率的差值，单位为Hz; .
+N为一个码元所取的离散值个数。
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>香农公式-带噪信道容量公式:</p>
+<ul>
+<li>
+<p><code> C = H × log2 ( 1 + S / N ) (bps)</code></p>
+</li>
+<li>
+<p>S为信号功率，N为噪声功率，S/N为信噪比，通常把信噪比表示成10lg(S/N)分贝(dB)</p>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>S/N=100
+10lg (100) =20dB
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+<h3 id=编码与调制>编码与调制<a hidden class=anchor aria-hidden=true href=#编码与调制>#</a></h3>
+<p><img loading=lazy src=https://srpihot-image.oss-cn-hongkong.aliyuncs.com/img/20220116124736.png alt>
+</p>
+<p><img loading=lazy src=https://srpihot-image.oss-cn-hongkong.aliyuncs.com/img/20220116124826.png alt>
+</p>
+<h3 id=传输介质>传输介质<a hidden class=anchor aria-hidden=true href=#传输介质>#</a></h3>
+<p>传输介质分为两大类:导向性传输介质(就是用一根实实在在的线来传播，如双绞线和光纤)和非导向性传输介质(在自由空间中自由传播，如红外线、微波)。导向性传输介质包含双绞线、同轴电缆和光纤。</p>
+<h3 id=设备>设备<a hidden class=anchor aria-hidden=true href=#设备>#</a></h3>
+<p>物理层设备主要包含中继器和集线器，放大器和中继器都是起放大信号的作用，只不过放大器放大的是模拟信号，中继器放大的是数字信号。中继器是普通集线器的前身，集线器实际就是一种多端口的中继器。集线器一-般有4、8、16、24、32等数量的RJ45接口，通过这些接口，集线器便能为相应数量的计算机完成“中继”功能。由于它在网络中处于一种“中心”位置，因此集线器也叫作Hub。</p>
+<blockquote>
+<p>集线器不能隔离冲突域。</p>
+</blockquote>
+<h2 id=数据链路层>数据链路层<a hidden class=anchor aria-hidden=true href=#数据链路层>#</a></h2>
+<h3 id=基本功能>基本功能<a hidden class=anchor aria-hidden=true href=#基本功能>#</a></h3>
+<ul>
+<li>封装成帧</li>
+</ul>
+<p>将网络层传下来的分组添加首部和尾部，用于标记帧的开始和结束。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/29a14735-e154-4f60-9a04-c9628e5d09f4.png alt>
+</p>
+<ul>
+<li>透明传输</li>
+</ul>
+<p>透明表示一个实际存在的事物看起来好像不存在一样。</p>
+<p>帧使用首部和尾部进行定界，如果帧的数据部分含有和首部尾部相同的内容，那么帧的开始和结束位置就会被错误的判定。需要在数据部分出现首部尾部相同的内容前面插入转义字符。如果数据部分出现转义字符，那么就在转义字符前面再加个转义字符。在接收端进行处理之后可以还原出原始数据。这个过程透明传输的内容是转义字符，用户察觉不到转义字符的存在。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e738a3d2-f42e-4755-ae13-ca23497e7a97.png alt>
+</p>
+<h3 id=3-差错检测>3. 差错检测<a hidden class=anchor aria-hidden=true href=#3-差错检测>#</a></h3>
+<p>目前数据链路层广泛使用了循环冗余检验（CRC）来检查比特差错。</p>
+<h3 id=信道分类>信道分类<a hidden class=anchor aria-hidden=true href=#信道分类>#</a></h3>
+<ul>
+<li>广播信道</li>
+</ul>
+<p>一对多通信，一个节点发送的数据能够被广播信道上所有的节点接收到。</p>
+<p>所有的节点都在同一个广播信道上发送数据，因此需要有专门的控制方法进行协调，避免发生冲突（冲突也叫碰撞）。</p>
+<p>主要有两种控制方法进行协调，一个是使用信道复用技术，一是使用 CSMA/CD 协议。</p>
+<ul>
+<li>点对点信道</li>
+</ul>
+<p>一对一通信。</p>
+<p>因为不会发生碰撞，因此也比较简单，使用 PPP 协议进行控制。</p>
+<h3 id=信道复用技术>信道复用技术<a hidden class=anchor aria-hidden=true href=#信道复用技术>#</a></h3>
+<ul>
+<li>频分复用</li>
+</ul>
+<p>频分复用的所有主机在相同的时间占用不同的频率带宽资源。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/4aa5e057-bc57-4719-ab57-c6fbc861c505.png alt>
+</p>
+<ul>
+<li>时分复用</li>
+</ul>
+<p>时分复用的所有主机在不同的时间占用相同的频率带宽资源。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/67582ade-d44a-46a6-8757-3c1296cc1ef9.png alt>
+</p>
+<p>使用频分复用和时分复用进行通信，在通信的过程中主机会一直占用一部分信道资源。但是由于计算机数据的突发性质，通信过程没必要一直占用信道资源而不让出给其它用户使用，因此这两种方式对信道的利用率都不高。</p>
+<ul>
+<li>统计时分复用</li>
+</ul>
+<p>是对时分复用的一种改进，不固定每个用户在时分复用帧中的位置，只要有数据就集中起来组成统计时分复用帧然后发送。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/6283be2a-814a-4a10-84bf-9592533fe6bc.png alt>
+</p>
+<ul>
+<li>波分复用</li>
+</ul>
+<p>光的频分复用。由于光的频率很高，因此习惯上用波长而不是频率来表示所使用的光载波。</p>
+<ul>
+<li>码分复用</li>
+</ul>
+<p>为每个用户分配 m bit 的码片，并且所有的码片正交，对于任意两个码片 和 有</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/308a02e9-3346-4251-8c41-bd5536dab491.png alt>
+</p>
+<p>为了讨论方便，取 m=8，设码片 为 00011011。在拥有该码片的用户发送比特 1 时就发送该码片，发送比特 0 时就发送该码片的反码 11100100。</p>
+<p>在计算时将 00011011 记作 (-1 -1 -1 +1 +1 -1 +1 +1)，可以得到</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/6fda1dc7-5c74-49c1-bb79-237a77e43a43.png alt>
+</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e325a903-f0b1-4fbd-82bf-88913dc2f290.png alt>
+</p>
+<p>其中 为 的反码。</p>
+<p>利用上面的式子我们知道，当接收端使用码片 对接收到的数据进行内积运算时，结果为 0 的是其它用户发送的数据，结果为 1 的是用户发送的比特 1，结果为 -1 的是用户发送的比特 0。</p>
+<p>码分复用需要发送的数据量为原先的 m 倍。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/99b6060e-099d-4201-8e86-f8ab3768a7cf.png alt>
+</p>
+<h3 id=csmacd-协议>CSMA/CD 协议<a hidden class=anchor aria-hidden=true href=#csmacd-协议>#</a></h3>
+<p>CSMA/CD 表示载波监听多点接入 / 碰撞检测。</p>
+<ul>
+<li><strong>多点接入</strong> ：说明这是总线型网络，许多主机以多点的方式连接到总线上。</li>
+<li><strong>载波监听</strong> ：每个主机都必须不停地监听信道。在发送前，如果监听到信道正在使用，就必须等待。</li>
+<li><strong>碰撞检测</strong> ：在发送中，如果监听到信道已有其它主机正在发送数据，就表示发生了碰撞。虽然每个主机在发送数据之前都已经监听到信道为空闲，但是由于电磁波的传播时延的存在，还是有可能会发生碰撞。</li>
+</ul>
+<p>记端到端的传播时延为 τ，最先发送的站点最多经过 2τ 就可以知道是否发生了碰撞，称 2τ 为 <strong>争用期</strong> 。只有经过争用期之后还没有检测到碰撞，才能肯定这次发送不会发生碰撞。</p>
+<p>当发生碰撞时，站点要停止发送，等待一段时间再发送。这个时间采用 <strong>截断二进制指数退避算法</strong> 来确定。从离散的整数集合 {0, 1, .., (2k-1)} 中随机取出一个数，记作 r，然后取 r 倍的争用期作为重传等待时间。</p>
+<h3 id=ppp-协议>PPP 协议<a hidden class=anchor aria-hidden=true href=#ppp-协议>#</a></h3>
+<p>互联网用户通常需要连接到某个 ISP 之后才能接入到互联网，PPP 协议是用户计算机和 ISP 进行通信时所使用的数据链路层协议。</p>
+<p>PPP 的帧格式：</p>
+<ul>
+<li>F 字段为帧的定界符</li>
+<li>A 和 C 字段暂时没有意义</li>
+<li>FCS 字段是使用 CRC 的检验序列</li>
+<li>信息部分的长度不超过 1500</li>
+</ul>
+<h3 id=mac-地址>MAC 地址<a hidden class=anchor aria-hidden=true href=#mac-地址>#</a></h3>
+<p><img loading=lazy src=https://srpihot-image.oss-cn-hongkong.aliyuncs.com/img/20220116142014.png alt>
+</p>
+<p>MAC 地址是链路层地址，长度为 6 字节（48 位），用于唯一标识网络适配器（网卡）。</p>
+<p>MAC地址全球唯一，由 IEEE对这些地址进行管理和分配。</p>
+<p>每个地址由两部分组成，分别是供应商代码和序列号。其中前24位二进制代表<code>该供应商代码</code>。剩下的24位由厂商自己分配。</p>
+<h3 id=局域网>局域网<a hidden class=anchor aria-hidden=true href=#局域网>#</a></h3>
+<p>局域网是一种典型的广播信道，主要特点是网络为一个单位所拥有，且地理范围和站点数目均有限。</p>
+<p>主要有以太网、令牌环网、FDDI 和 ATM 等局域网技术，目前以太网占领着有线局域网市场。</p>
+<p>可以按照网络拓扑结构对局域网进行分类：</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/807f4258-dba8-4c54-9c3c-a707c7ccffa2.jpg alt>
+</p>
+<h3 id=以太网>以太网<a hidden class=anchor aria-hidden=true href=#以太网>#</a></h3>
+<p>以太网是一种星型拓扑结构局域网。</p>
+<p>早期使用集线器进行连接，集线器是一种物理层设备， 作用于比特而不是帧，当一个比特到达接口时，集线器重新生成这个比特，并将其能量强度放大，从而扩大网络的传输距离，之后再将这个比特发送到其它所有接口。如果集线器同时收到两个不同接口的帧，那么就发生了碰撞。</p>
+<p>目前以太网使用交换机替代了集线器，交换机是一种链路层设备，它不会发生碰撞，能根据 MAC 地址进行存储转发。</p>
+<p>以太网帧格式：</p>
+<ul>
+<li><strong>类型</strong> ：标记上层使用的协议；</li>
+<li><strong>数据</strong> ：长度在 46-1500 之间，如果太小则需要填充；</li>
+<li><strong>FCS</strong> ：帧检验序列，使用的是 CRC 检验方法；</li>
+</ul>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/164944d3-bbd2-4bb2-924b-e62199c51b90.png alt>
+</p>
+<h3 id=交换机>交换机<a hidden class=anchor aria-hidden=true href=#交换机>#</a></h3>
+<p>交换机具有自学习能力，学习的是交换表的内容，交换表中存储着 MAC 地址到接口的映射。</p>
+<p>正是由于这种自学习能力，因此交换机是一种即插即用设备，不需要网络管理员手动配置交换表内容。</p>
+<p>下图中，交换机有 4 个接口，主机 A 向主机 B 发送数据帧时，交换机把主机 A 到接口 1 的映射写入交换表中。为了发送数据帧到 B，先查交换表，此时没有主机 B 的表项，那么主机 A 就发送广播帧，主机 C 和主机 D 会丢弃该帧，主机 B 回应该帧向主机 A 发送数据包时，交换机查找交换表得到主机 A 映射的接口为 1，就发送数据帧到接口 1，同时交换机添加主机 B 到接口 2 的映射。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/a4444545-0d68-4015-9a3d-19209dc436b3.png alt>
+</p>
+<h3 id=虚拟局域网vlan>虚拟局域网(VLAN)<a hidden class=anchor aria-hidden=true href=#虚拟局域网vlan>#</a></h3>
+<p>虚拟局域网可以建立与物理位置无关的逻辑组，只有在同一个虚拟局域网中的成员才会收到链路层广播信息。</p>
+<p>例如下图中 (A1, A2, A3, A4) 属于一个虚拟局域网，A1 发送的广播会被 A2、A3、A4 收到，而其它站点收不到。</p>
+<p>使用 VLAN 干线连接来建立虚拟局域网，每台交换机上的一个特殊接口被设置为干线接口，以互连 VLAN 交换机。IEEE 定义了一种扩展的以太网帧格式 802.1Q（还有一种ISL协议，但支持思科的设备），它在标准以太网帧上加进了 4 字节首部 VLAN 标签，用于表示该帧属于哪一个虚拟局域网。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e98e9d20-206b-4533-bacf-3448d0096f38.png alt>
+</p>
+<p>具体的工作原理如下：</p>
+<ul>
+<li>PC发送数据帧进入交换机，会被打上vlan tag；vlan tag中的vlan id就是收到帧的接口的所属vlan；一旦数据帧被打上vlan tag，就变成了802.1Q（在源Mac地址和Type之间携带vlan tag的帧格式，计算机不识别）格式的帧</li>
+<li>交换机检查数据帧的目的MAC地址，进行判断；如果目的MAC对应的接口允许tag中的vlan id通过，则数据帧可以转发；否则，丢弃该帧</li>
+<li>数据帧从出接口发往PC前，会剥离vlan tag，使之还原为标准的以太网帧格式</li>
+</ul>
+<blockquote>
+<p>VLAN是在第二层上实现隔离广播域</p>
+</blockquote>
+<p>当一条链路中需要承载多VLAN信息的时候，需使用<code>trunk</code>来实现。例如下图：</p>
+<p><img loading=lazy src=https://srpihot-image.oss-cn-hongkong.aliyuncs.com/img/20220116143329.png alt>
+</p>
+<h3 id=stp-生成树协议>STP 生成树协议<a hidden class=anchor aria-hidden=true href=#stp-生成树协议>#</a></h3>
+<p>STP（Spanning Tree Protocol）是生成树协议的英文缩写，可应用于计算机网络中树形拓扑结构建立，主要作用是防止网桥网络中的冗余链路形成环路等工作。</p>
+<ul>
+<li>通过将特定的端口选为 Blocking state，来实现无环的拓扑；</li>
+<li>IEEE 802.1D 规定了这一行为；</li>
+<li>Cisco采用IEEE802.1D的增强的私有协议生成树PVST+;</li>
+</ul>
+<p>STP工作原理如下：</p>
+<ul>
+<li>在每一个广播域选择一个root。并遵循下述选择优选级。</li>
+<li>在每一个非根桥选择一个根端口。并遵循下述选择优选级。</li>
+<li>每个段选择一个制定端口。并遵循下述选择优选级。</li>
+<li>选择一个非指定端口进行Block。并遵循下述选择优选级。</li>
+</ul>
+<p>选择优先级：</p>
+<ul>
+<li>
+<p>最低的根桥ID</p>
+</li>
+<li>
+<p>最低的根路径代价</p>
+<table>
+<thead>
+<tr>
+<th>链路速度</th>
+<th>花销代价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10Gb/s</td>
+<td>2</td>
+</tr>
+<tr>
+<td>1Gb/s</td>
+<td>4</td>
+</tr>
+<tr>
+<td>100Mb/s</td>
+<td>19</td>
+</tr>
+<tr>
+<td>10Mb/s</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>最低发送者桥ID</p>
+</li>
+<li>
+<p>最低端口ID</p>
+</li>
+</ul>
+<p>STP端口状态将从Blockiing->Listening->Learning->Forwarding的四种状态。</p>
+<h3 id=链路聚合>链路聚合<a hidden class=anchor aria-hidden=true href=#链路聚合>#</a></h3>
+<p>把连接到同一台交换机上的多个物理端口捆绑为一个逻辑端口的过程叫做链路聚合。聚合组内只要还有物理端口存活，链路就不会中断，提高链路可靠性避免了STP计算，聚合组内物理端口不会被闭塞，增加链路传输带宽，聚合后的链路会基于流自动负载分担。</p>
+<h2 id=网络层>网络层<a hidden class=anchor aria-hidden=true href=#网络层>#</a></h2>
+<p>因为网络层是整个互联网的核心，因此应当让网络层尽可能简单。网络层向上只提供简单灵活的、无连接的、尽最大努力交互的数据报服务。</p>
+<p>使用 IP 协议，可以把异构的物理网络连接起来，使得在网络层看起来好像是一个统一的网络。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/8d779ab7-ffcc-47c6-90ec-ede8260b2368.png alt>
+</p>
+<p>与 IP 协议配套使用的还有三个协议：</p>
+<ul>
+<li>地址解析协议 ARP（Address Resolution Protocol）</li>
+<li>网际控制报文协议 ICMP（Internet Control Message Protocol）</li>
+<li>网际组管理协议 IGMP（Internet Group Management Protocol）</li>
+</ul>
+<h3 id=ip-数据报格式>IP 数据报格式<a hidden class=anchor aria-hidden=true href=#ip-数据报格式>#</a></h3>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/85c05fb1-5546-4c50-9221-21f231cdc8c5.jpg alt>
+</p>
+<ul>
+<li>
+<p><strong>版本</strong> : 有 4（IPv4）和 6（IPv6）两个值；</p>
+</li>
+<li>
+<p><strong>首部长度</strong> : 占 4 位，因此最大值为 15。值为 1 表示的是 1 个 32 位字的长度，也就是 4 字节。因为固定部分长度为 20 字节，因此该值最小为 5。如果可选字段的长度不是 4 字节的整数倍，就用尾部的填充部分来填充。</p>
+</li>
+<li>
+<p><strong>区分服务</strong> : 用来获得更好的服务，一般情况下不使用。</p>
+</li>
+<li>
+<p><strong>总长度</strong> : 包括首部长度和数据部分长度。</p>
+</li>
+<li>
+<p><strong>生存时间</strong> ：TTL，它的存在是为了防止无法交付的数据报在互联网中不断兜圈子。以路由器跳数为单位，当 TTL 为 0 时就丢弃数据报。</p>
+</li>
+<li>
+<p><strong>协议</strong> ：指出携带的数据应该上交给哪个协议进行处理，例如 ICMP、TCP、UDP 等。</p>
+</li>
+<li>
+<p><strong>首部检验和</strong> ：因为数据报每经过一个路由器，都要重新计算检验和，因此检验和不包含数据部分可以减少计算的工作量。</p>
+</li>
+<li>
+<p><strong>标识</strong> : 在数据报长度过长从而发生分片的情况下，相同数据报的不同分片具有相同的标识符。</p>
+</li>
+<li>
+<p><strong>片偏移</strong> : 和标识符一起，用于发生分片的情况。片偏移的单位为 8 字节。</p>
+</li>
+</ul>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/23ba890e-e11c-45e2-a20c-64d217f83430.png alt>
+</p>
+<h3 id=ip-地址编址方式>IP 地址编址方式<a hidden class=anchor aria-hidden=true href=#ip-地址编址方式>#</a></h3>
+<p>IP 地址的编址方式经历了三个历史阶段：</p>
+<ul>
+<li>
+<p>分类</p>
+<p>由两部分组成，网络号和主机号，其中不同分类具有不同的网络号长度，并且是固定的。</p>
+<p>IP 地址 ::= {&lt; 网络号 >, &lt; 主机号 >}</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/cbf50eb8-22b4-4528-a2e7-d187143d57f7.png alt>
+</p>
+</li>
+<li>
+<p>子网划分</p>
+<p>通过在主机号字段中拿一部分作为子网号，把两级 IP 地址划分为三级 IP 地址。</p>
+<p>IP 地址 ::= {&lt; 网络号 >, &lt; 子网号 >, &lt; 主机号 >}</p>
+<p>要使用子网，必须配置子网掩码。一个 B 类地址的默认子网掩码为 255.255.0.0，如果 B 类地址的子网占两个比特，那么子网掩码为 11111111 11111111 11000000 00000000，也就是 255.255.192.0。</p>
+<p>注意，外部网络看不到子网的存在。</p>
+</li>
+<li>
+<p>无分类</p>
+<p>无分类编址 CIDR 消除了传统 A 类、B 类和 C 类地址以及划分子网的概念，使用网络前缀和主机号来对 IP 地址进行编码，网络前缀的长度可以根据需要变化。</p>
+<p>IP 地址 ::= {&lt; 网络前缀号 >, &lt; 主机号 >}</p>
+<p>CIDR 的记法上采用在 IP 地址后面加上网络前缀长度的方法，例如 128.14.35.7/20 表示前 20 位为网络前缀。</p>
+<p>CIDR 的地址掩码可以继续称为子网掩码，子网掩码首 1 长度为网络前缀的长度。</p>
+<p>一个 CIDR 地址块中有很多地址，一个 CIDR 表示的网络就可以表示原来的很多个网络，并且在路由表中只需要一个路由就可以代替原来的多个路由，减少了路由表项的数量。把这种通过使用网络前缀来减少路由表项的方式称为路由聚合，也称为 <strong>构成超网</strong> 。</p>
+<p>在路由表中的项目由“网络前缀”和“下一跳地址”组成，在查找时可能会得到不止一个匹配结果，应当采用最长前缀匹配来确定应该匹配哪一个。</p>
+</li>
+</ul>
+<h3 id=地址解析协议-arp>地址解析协议 ARP<a hidden class=anchor aria-hidden=true href=#地址解析协议-arp>#</a></h3>
+<p>网络层实现主机之间的通信，而链路层实现具体每段链路之间的通信。因此在通信过程中，IP 数据报的源地址和目的地址始终不变，而 MAC 地址随着链路的改变而改变。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/66192382-558b-4b05-a35d-ac4a2b1a9811.jpg alt>
+</p>
+<p>ARP 实现由 IP 地址得到 MAC 地址。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/b9d79a5a-e7af-499b-b989-f10483e71b8b.jpg alt>
+</p>
+<p>每个主机都有一个 ARP 高速缓存，里面有本局域网上的各主机和路由器的 IP 地址到 MAC 地址的映射表。</p>
+<p>如果主机 A 知道主机 B 的 IP 地址，但是 ARP 高速缓存中没有该 IP 地址到 MAC 地址的映射，此时主机 A 通过广播的方式发送 ARP 请求分组，主机 B 收到该请求后会发送 ARP 响应分组给主机 A 告知其 MAC 地址，随后主机 A 向其高速缓存中写入主机 B 的 IP 地址到 MAC 地址的映射。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/8006a450-6c2f-498c-a928-c927f758b1d0.png alt>
+</p>
+<h3 id=网际控制报文协议-icmp>网际控制报文协议 ICMP<a hidden class=anchor aria-hidden=true href=#网际控制报文协议-icmp>#</a></h3>
+<p>ICMP 是为了更有效地转发 IP 数据报和提高交付成功的机会。它封装在 IP 数据报中，但是不属于高层协议。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e3124763-f75e-46c3-ba82-341e6c98d862.jpg alt>
+</p>
+<p>ICMP 报文分为差错报告报文和询问报文。</p>
+<ul>
+<li>Ping</li>
+</ul>
+<p>Ping 是 ICMP 的一个重要应用，主要用来测试两台主机之间的连通性。</p>
+<p>Ping 的原理是通过向目的主机发送 ICMP Echo 请求报文，目的主机收到之后会发送 Echo 回答报文。Ping 会根据时间和成功响应的次数估算出数据包往返时间以及丢包率。</p>
+<ul>
+<li>Traceroute</li>
+</ul>
+<p>Traceroute 是 ICMP 的另一个应用，用来跟踪一个分组从源点到终点的路径。</p>
+<p>Traceroute 发送的 IP 数据报封装的是无法交付的 UDP 用户数据报，并由目的主机发送终点不可达差错报告报文。</p>
+<ul>
+<li>源主机向目的主机发送一连串的 IP 数据报。第一个数据报 P1 的生存时间 TTL 设置为 1，当 P1 到达路径上的第一个路由器 R1 时，R1 收下它并把 TTL 减 1，此时 TTL 等于 0，R1 就把 P1 丢弃，并向源主机发送一个 ICMP 时间超过差错报告报文；</li>
+<li>源主机接着发送第二个数据报 P2，并把 TTL 设置为 2。P2 先到达 R1，R1 收下后把 TTL 减 1 再转发给 R2，R2 收下后也把 TTL 减 1，由于此时 TTL 等于 0，R2 就丢弃 P2，并向源主机发送一个 ICMP 时间超过差错报文。</li>
+<li>不断执行这样的步骤，直到最后一个数据报刚刚到达目的主机，主机不转发数据报，也不把 TTL 值减 1。但是因为数据报封装的是无法交付的 UDP，因此目的主机要向源主机发送 ICMP 终点不可达差错报告报文。</li>
+<li>之后源主机知道了到达目的主机所经过的路由器 IP 地址以及到达每个路由器的往返时间。</li>
+</ul>
+<h3 id=虚拟专用网-vpn>虚拟专用网 VPN<a hidden class=anchor aria-hidden=true href=#虚拟专用网-vpn>#</a></h3>
+<p>由于 IP 地址的紧缺，一个机构能申请到的 IP 地址数往往远小于本机构所拥有的主机数。并且一个机构并不需要把所有的主机接入到外部的互联网中，机构内的计算机可以使用仅在本机构有效的 IP 地址（专用地址）。</p>
+<p>有三个专用地址块：</p>
+<ul>
+<li>10.0.0.0 ~ 10.255.255.255</li>
+<li>172.16.0.0 ~ 172.31.255.255</li>
+<li>192.168.0.0 ~ 192.168.255.255</li>
+</ul>
+<p>VPN 使用公用的互联网作为本机构各专用网之间的通信载体。专用指机构内的主机只与本机构内的其它主机通信；虚拟指好像是，而实际上并不是，它有经过公用的互联网。</p>
+<p>下图中，场所 A 和 B 的通信经过互联网，如果场所 A 的主机 X 要和另一个场所 B 的主机 Y 通信，IP 数据报的源地址是 10.1.0.1，目的地址是 10.2.0.3。数据报先发送到与互联网相连的路由器 R1，R1 对内部数据进行加密，然后重新加上数据报的首部，源地址是路由器 R1 的全球地址 125.1.2.3，目的地址是路由器 R2 的全球地址 194.4.5.6。路由器 R2 收到数据报后将数据部分进行解密，恢复原来的数据报，此时目的地址为 10.2.0.3，就交付给 Y。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/1556770b-8c01-4681-af10-46f1df69202c.jpg alt>
+</p>
+<h3 id=网络地址转换-nat>网络地址转换 NAT<a hidden class=anchor aria-hidden=true href=#网络地址转换-nat>#</a></h3>
+<p>专用网内部的主机使用本地 IP 地址又想和互联网上的主机通信时，可以使用 NAT 来将本地 IP 转换为全球 IP。</p>
+<p>在以前，NAT 将本地 IP 和全球 IP 一一对应，这种方式下拥有 n 个全球 IP 地址的专用网内最多只可以同时有 n 台主机接入互联网。为了更有效地利用全球 IP 地址，现在常用的 NAT 转换表把传输层的端口号也用上了，使得多个专用网内部的主机共用一个全球 IP 地址。使用端口号的 NAT 也叫做网络地址与端口转换 NAPT。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/2719067e-b299-4639-9065-bed6729dbf0b.png alt>
+</p>
+<h3 id=路由器的结构>路由器的结构<a hidden class=anchor aria-hidden=true href=#路由器的结构>#</a></h3>
+<p>路由器从功能上可以划分为：路由选择和分组转发。</p>
+<p>分组转发结构由三个部分组成：交换结构、一组输入端口和一组输出端口。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/c3369072-c740-43b0-b276-202bd1d3960d.jpg alt>
+</p>
+<ul>
+<li>
+<p>路由器分组转发流程</p>
+<ul>
+<li>
+<p>从数据报的首部提取目的主机的 IP 地址 D，得到目的网络地址 N。</p>
+</li>
+<li>
+<p>若 N 就是与此路由器直接相连的某个网络地址，则进行直接交付；</p>
+</li>
+<li>
+<p>若路由表中有目的地址为 D 的特定主机路由，则把数据报传送给表中所指明的下一跳路由器；</p>
+</li>
+<li>
+<p>若路由表中有到达网络 N 的路由，则把数据报传送给路由表中所指明的下一跳路由器；</p>
+</li>
+<li>
+<p>若路由表中有一个默认路由，则把数据报传送给路由表中所指明的默认路由器；</p>
+</li>
+<li>
+<p>报告转发分组出错。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/1ab49e39-012b-4383-8284-26570987e3c4.jpg alt>
+</p>
+<h3 id=路由选择协议>路由选择协议<a hidden class=anchor aria-hidden=true href=#路由选择协议>#</a></h3>
+<p>路由选择协议都是自适应的，能随着网络通信量和拓扑结构的变化而自适应地进行调整。</p>
+<p>互联网可以划分为许多较小的自治系统 AS，一个 AS 可以使用一种和别的 AS 不同的路由选择协议。</p>
+<p>可以把路由选择协议划分为两大类：</p>
+<ul>
+<li>自治系统内部的路由选择：RIP 和 OSPF</li>
+<li>自治系统间的路由选择：BGP</li>
+</ul>
+<h3 id=1-内部网关协议-rip>1. 内部网关协议 RIP<a hidden class=anchor aria-hidden=true href=#1-内部网关协议-rip>#</a></h3>
+<p>RIP 是一种基于距离向量的路由选择协议。距离是指跳数，直接相连的路由器跳数为 1。跳数最多为 15，超过 15 表示不可达。</p>
+<p>RIP 按固定的时间间隔仅和相邻路由器交换自己的路由表，经过若干次交换之后，所有路由器最终会知道到达本自治系统中任何一个网络的最短距离和下一跳路由器地址。</p>
+<p>距离向量算法：</p>
+<ul>
+<li>对地址为 X 的相邻路由器发来的 RIP 报文，先修改报文中的所有项目，把下一跳字段中的地址改为 X，并把所有的距离字段加 1；</li>
+<li>对修改后的 RIP 报文中的每一个项目，进行以下步骤：</li>
+<li>若原来的路由表中没有目的网络 N，则把该项目添加到路由表中；</li>
+<li>否则：若下一跳路由器地址是 X，则把收到的项目替换原来路由表中的项目；否则：若收到的项目中的距离 d 小于路由表中的距离，则进行更新（例如原始路由表项为 Net2, 5, P，新表项为 Net2, 4, X，则更新）；否则什么也不做。</li>
+<li>若 3 分钟还没有收到相邻路由器的更新路由表，则把该相邻路由器标为不可达，即把距离置为 16。</li>
+</ul>
+<p>RIP 协议实现简单，开销小。但是 RIP 能使用的最大距离为 15，限制了网络的规模。并且当网络出现故障时，要经过比较长的时间才能将此消息传送到所有路由器。</p>
+<h3 id=2-内部网关协议-ospf>2. 内部网关协议 OSPF<a hidden class=anchor aria-hidden=true href=#2-内部网关协议-ospf>#</a></h3>
+<p>开放最短路径优先 OSPF，是为了克服 RIP 的缺点而开发出来的。</p>
+<p>开放表示 OSPF 不受某一家厂商控制，而是公开发表的；最短路径优先表示使用了 Dijkstra 提出的最短路径算法 SPF。</p>
+<p>OSPF 具有以下特点：</p>
+<ul>
+<li>向本自治系统中的所有路由器发送信息，这种方法是洪泛法。</li>
+<li>发送的信息就是与相邻路由器的链路状态，链路状态包括与哪些路由器相连以及链路的度量，度量用费用、距离、时延、带宽等来表示。</li>
+<li>只有当链路状态发生变化时，路由器才会发送信息。</li>
+</ul>
+<p>所有路由器都具有全网的拓扑结构图，并且是一致的。相比于 RIP，OSPF 的更新过程收敛的很快。</p>
+<h3 id=3-外部网关协议-bgp>3. 外部网关协议 BGP<a hidden class=anchor aria-hidden=true href=#3-外部网关协议-bgp>#</a></h3>
+<p>BGP（Border Gateway Protocol，边界网关协议）</p>
+<p>AS 之间的路由选择很困难，主要是由于：</p>
+<ul>
+<li>互联网规模很大；</li>
+<li>各个 AS 内部使用不同的路由选择协议，无法准确定义路径的度量；</li>
+<li>AS 之间的路由选择必须考虑有关的策略，比如有些 AS 不愿意让其它 AS 经过。</li>
+</ul>
+<p>BGP 只能寻找一条比较好的路由，而不是最佳路由。</p>
+<p>每个 AS 都必须配置 BGP 发言人，通过在两个相邻 BGP 发言人之间建立 TCP 连接来交换路由信息。</p>
+<p><img loading=lazy src=https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/9cd0ae20-4fb5-4017-a000-f7d3a0eb3529.png alt>
+</p>
+<h2 id=传输层>传输层<a hidden class=anchor aria-hidden=true href=#传输层>#</a></h2>
+<h2 id=应用层>应用层<a hidden class=anchor aria-hidden=true href=#应用层>#</a></h2>
+<h2 id=参考文献>参考文献<a hidden class=anchor aria-hidden=true href=#参考文献>#</a></h2>
+<ul>
+<li><a href=https://github.com/CyC2018/cs-notes>CyC2018/CS-Notes: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计 (github.com)</a></li>
+<li>《计算机网络》谢希仁</li>
+<li>JamesF.Kurose, KeithW.Ross, 库罗斯, 等. 计算机网络: 自顶向下方法 [M]. 机械工业出版社, 2014.</li>
+<li>W.RichardStevens. TCP/IP 详解. 卷 1, 协议 [M]. 机械工业出版社, 2006.</li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://srpihot.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/>计算机网络</a></li>
+<li><a href=https://srpihot.github.io/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/>编程基础</a></li>
+</ul>
+<nav class=paginav>
+<a class=next href=https://srpihot.github.io/post/springboot%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/>
+<span class=title>Next Page »</span>
+<br>
+<span>SpringBoot常用模块</span>
+</a>
+</nav>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://srpihot.github.io/>🇨🇳 Srpihot's Blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
