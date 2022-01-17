@@ -78,6 +78,22 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Flex中align-Content与align-Items区别
+</h2>
+</header>
+<section class=entry-content>
+<p>前言 在用 flex布局时，发现有两个属性功能好像有点类似： align-items和 align-content。在看阮一峰前辈关于Flex布局的教程中，也没有十分的理解，因此自己动手实践了一下，得到如下的结论：
+align-items align-items属性可以应用于所有的flex容器，它的作用是设置flex子项在每个flex行的交叉轴上的默认对齐方式。
+align-content align-content只适用多行的flex容器（也就是flex容器中的子项不止一行时该属性才有效果），它的作用是当flex容器在交叉轴上有多余的空间时，将子项作为一个整体（属性值为：flex-start、flex-end、center时）进行对齐。
+使用align-items: html部分如下：
+1 2 3 4 &lt;div class="father"> &lt;div class="child">&lt;/div> &lt;div class="child">&lt;/div> &lt;/div> CSS样式如下：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 * { margin: 0; padding: 0; } div { border: 3px dashed black; } .father { width: 300px; height: 300px; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; } ....</p>
+</section>
+<footer class=entry-footer><span title="2022-01-17 15:58:33 +0800 CST">January 17, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Srpihot</footer>
+<a class=entry-link aria-label="post link to Flex中align-Content与align-Items区别" href=https://srpihot.github.io/post/flex%E5%B8%83%E5%B1%80%E4%B8%ADalign-content%E4%B8%8Ealign-items%E5%8C%BA%E5%88%AB/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>计算机网络
 </h2>
 </header>
